@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "eePQGdCQYKpOHYCraHDet3g1TjiSTuzfODbwYeDg7gx5S5WSCVwMwP8BJvDhAetLevov3t6WX4A/jRHEd9nyfA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\admin\\RiderProjects\\DigiRose\\DigiRose.CoreStructure\\DigiRose.CoreStructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\newtonsoft.json\\13.0.2-beta1\\newtonsoft.json.13.0.2-beta1.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\restsharp\\108.0.2-alpha.0.4\\restsharp.108.0.2-alpha.0.4.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

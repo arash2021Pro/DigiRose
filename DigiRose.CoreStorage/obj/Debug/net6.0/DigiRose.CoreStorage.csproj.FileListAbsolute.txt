@@ -1,0 +1,17 @@
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\bin\Debug\net6.0\DigiRose.CoreStorage.deps.json
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\bin\Debug\net6.0\DigiRose.CoreStorage.runtimeconfig.json
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\bin\Debug\net6.0\DigiRose.CoreStorage.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\bin\Debug\net6.0\DigiRose.CoreStorage.pdb
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\bin\Debug\net6.0\DigiRose.CoreBussiness.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\bin\Debug\net6.0\DigiRose.CoreBussiness.pdb
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\DigiRose.CoreStorage.csproj.AssemblyReference.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\DigiRose.CoreStorage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\DigiRose.CoreStorage.AssemblyInfoInputs.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\DigiRose.CoreStorage.AssemblyInfo.cs
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\DigiRose.CoreStorage.csproj.CoreCompileInputs.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\DigiRose.CoreStorage.csproj.CopyComplete
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\DigiRose.CoreStorage.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\refint\DigiRose.CoreStorage.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\DigiRose.CoreStorage.pdb
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\DigiRose.CoreStorage.genruntimeconfig.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStorage\obj\Debug\net6.0\ref\DigiRose.CoreStorage.dll

@@ -1,0 +1,69 @@
+﻿@using DigiRose.CoreBussiness.StorageEntity.Users
+@using System.Security.Claims
+@model List<DigiRose.CoreBussiness.StorageEntity.Users.User>
+<link rel="stylesheet" href="~/css/ManagerialPannel.css"/>
+<form asp-action="UserDataTable" asp-controller="Admin" method="get">
+    <div class="input-group mb-3 flex-md-row container-fluid" >
+      <button class="btn btn-primary" type="submit" style="border-radius: 30px" >جست و حو</button>
+      <input type="text" class="form-control" placeholder="جست و جوی کاربران ..." name="searchValue" style="border-radius: 30px">
+    </div>
+</form>
+<table class="table table-bordered table-hover  table-responsive-md table-light" >
+    <thead>
+    <tr>
+        <th  style="border-radius: 30px">شماره موبایل</th>
+        <th  style="border-radius: 30px">وضعیت</th>
+        <th  style="border-radius: 30px">نقش</th>
+        <th  style="border-radius: 30px">اقدامات</th>
+    </tr>
+    </thead>
+    <tbody style="border-radius: 30px">
+    @{
+        foreach (var item in Model)
+        {
+            <tr>
+                
+                <td style="border-radius: 30px" ><strong> <span class="bg bg-warning" style="border-radius: 30px">@item.Phonenumber</span></strong></td>
+                @{
+                    if (item.UserStatus == UserStatus.None)
+                    {
+                        <td  style="border-radius: 30px"><span class="bg bg-secondary" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
+                                                                                 
+                    }
+                    else if (item.UserStatus == UserStatus.Active)
+                    {
+                        <td  style="border-radius: 30px"><span class="bg bg-success" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
+                    }
+                    else
+                    {
+                        <td  style="border-radius: 30px"><span class="bg bg-danger" style="border-radius: 30px" >@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
+                    }
+                }
+                <td style="border-radius: 30px" > <span class="bg bg-warning" style="border-radius: 30px">@DigiRose.Models.Admin.UserRole.GetUserRoleName(item.RoleId)</span></td>
+                
+                <td  style="border-radius: 30px" >
+                    @{
+                        if (item.UserStatus == UserStatus.Active)
+                        {
+                            <a href="@Url.Action("DeactivateUser","Admin",new{id=item.Id})})"><button class="btn btn-danger" style="border-radius: 30px" >مسدود</button></a>
+                           
+                        }
+                        else if (item.UserStatus == UserStatus.Inactive)
+                        {
+                            <a href="@Url.Action("ActivateUser","Admin",new {Id=item.Id})"><button class="btn btn-success" style="border-radius: 30px" >فعال</button></a>
+                         
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("DeactivateUser","Admin",new{id=item.Id})})"><button class="btn btn-danger" style="border-radius: 30px" >مسدود</button></a>
+                            <a href="@Url.Action("ActivateUser","Admin",new {Id=item.Id})"><button class="btn btn-success" style="border-radius: 30px" >فعال</button></a>
+                        }
+                    }
+                </td>
+              
+                
+            </tr>
+        }
+    }
+    </tbody>
+</table>

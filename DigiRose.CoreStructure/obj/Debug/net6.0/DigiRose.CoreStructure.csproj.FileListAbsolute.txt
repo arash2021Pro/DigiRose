@@ -1,0 +1,12 @@
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\bin\Debug\net6.0\DigiRose.CoreStructure.deps.json
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\bin\Debug\net6.0\DigiRose.CoreStructure.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\bin\Debug\net6.0\DigiRose.CoreStructure.pdb
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\obj\Debug\net6.0\DigiRose.CoreStructure.csproj.AssemblyReference.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\obj\Debug\net6.0\DigiRose.CoreStructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\obj\Debug\net6.0\DigiRose.CoreStructure.AssemblyInfoInputs.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\obj\Debug\net6.0\DigiRose.CoreStructure.AssemblyInfo.cs
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\obj\Debug\net6.0\DigiRose.CoreStructure.csproj.CoreCompileInputs.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\obj\Debug\net6.0\DigiRose.CoreStructure.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\obj\Debug\net6.0\refint\DigiRose.CoreStructure.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\obj\Debug\net6.0\DigiRose.CoreStructure.pdb
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreStructure\obj\Debug\net6.0\ref\DigiRose.CoreStructure.dll

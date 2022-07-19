@@ -1,0 +1,15 @@
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\bin\Debug\net6.0\DigiRose.CoreApplication.deps.json
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\bin\Debug\net6.0\DigiRose.CoreApplication.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\bin\Debug\net6.0\DigiRose.CoreApplication.pdb
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\DigiRose.CoreApplication.csproj.AssemblyReference.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\DigiRose.CoreApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\DigiRose.CoreApplication.AssemblyInfoInputs.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\DigiRose.CoreApplication.AssemblyInfo.cs
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\DigiRose.CoreApplication.csproj.CoreCompileInputs.cache
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\DigiRose.CoreApplication.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\refint\DigiRose.CoreApplication.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\DigiRose.CoreApplication.pdb
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\ref\DigiRose.CoreApplication.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\bin\Debug\net6.0\DigiRose.CoreBussiness.dll
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\bin\Debug\net6.0\DigiRose.CoreBussiness.pdb
+C:\Users\admin\RiderProjects\DigiRose\DigiRose.CoreApplication\obj\Debug\net6.0\DigiRose.CoreApplication.csproj.CopyComplete

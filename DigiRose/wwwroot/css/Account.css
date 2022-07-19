@@ -1,0 +1,38 @@
+body{
+    direction:rtl;
+    margin: auto;
+    font-family: "B Yekan",Tahoma;
+    background-color: whitesmoke;
+}
+.margin-top-50{
+
+
+    padding-right:345px;
+}
+.margin-top-30{
+    margin-top: 130px;
+}
+.logo{
+    max-height: 180px;
+    max-width: 180px;
+    padding-left: 45px;
+    margin-left: 120px;
+}
+.loginbox{
+    position: absolute;
+    background-color: white;
+    height: auto;
+    padding: 145px;
+    border-radius:4px;
+}
+bodyimage {
+   
+    background-color: #cccccc;
+}
+.center {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
