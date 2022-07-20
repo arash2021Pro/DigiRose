@@ -1,12 +1,16 @@
 ﻿using DigiRose.CoreApplication.CoreManagerApplication;
 using DigiRose.CoreBussiness.RepsPattern;
 using DigiRose.CoreBussiness.StorageEntity.Logging;
+using DigiRose.CoreBussiness.StorageEntity.Roles;
 using DigiRose.CoreBussiness.StorageEntity.Users;
 using DigiRose.CoreStorage.Migrations;
+using DigiRose.CoreStorage.SqlContext;
+using DigiRose.Models.Admin;
 using DigiRose.ModuleServices.CoreAuthenticationService;
 using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
 using Log = DigiRose.CoreBussiness.StorageEntity.Logging.Log;
+using UserStatus = DigiRose.CoreBussiness.StorageEntity.Users.UserStatus;
 
 
 namespace DigiRose.Controllers;
@@ -16,12 +20,14 @@ public class AdminController:Controller
     public ICoreServiceManager CoreServiceManager;
     public IUnitOfWork Work;
     public IMapper Mapper;
+    public ApplicationContext Context;
 
-    public AdminController(ICoreServiceManager coreServiceManager, IUnitOfWork work, IMapper mapper)
+    public AdminController(ICoreServiceManager coreServiceManager, IUnitOfWork work, IMapper mapper, ApplicationContext context)
     {
         CoreServiceManager = coreServiceManager;
         Work = work;
         Mapper = mapper;
+        Context = context;
     }
     [HttpGet]
     [Permission(1)]
@@ -40,10 +46,14 @@ public class AdminController:Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> UserDataTable(string? searchValue)
+    public async Task<IActionResult> UserDataTable(string? searchValue,int? pageNumber)
     {
-        var users = await CoreServiceManager.UserService.GetUserListAsync(searchValue);
-        return View(users);
+        var pageSize = 4;
+        var User = CoreServiceManager.UserService.GetQuerableUserAsync(searchValue);
+        if (!String.IsNullOrEmpty(searchValue)) pageNumber = 1;
+        return View(await PaginatedList<User>.CreateAsync(User, pageNumber ?? 1, pageSize));
+       // var users = await CoreServiceManager.UserService.GetUserListAsync(searchValue);
+      //  return View(users);
     }
 
     [HttpGet]

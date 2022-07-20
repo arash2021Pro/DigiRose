@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="~/css/AuthForm.css">
 <title>@ViewData["Title"] ثبت نام در دیجی رز</title>
 <link rel="stylesheet" href="~/css/Account.css">
+<link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
 <script src="js/site.js"></script>
 @{
     Layout = "AuthTemplate";
@@ -49,8 +50,8 @@
                     </div>
                     <br>
                     <div class="card vr-cardboard btncardStyle">
-                        <button class="btn btn-primary btncardStyle" type="submit" dir="rtl">ثبت نام</button>
-                        <a href="@Url.Action("Login","User")" class="btn btnstyle" type="submit" dir="rtl">ورود</a>
+                        <button class="btn btn-primary btncardStyle" type="submit" dir="rtl"><i class="fa fa-registered" aria-hidden="true"></i></button>
+                        <a href="@Url.Action("Login","User")" class="btn btnstyle" type="submit" dir="rtl"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
                     </div>
                 </form>
             </div>

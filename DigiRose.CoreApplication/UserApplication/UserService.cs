@@ -59,4 +59,15 @@ public class UserService : IUserService
     public async Task<List<User?>> GetUserListAsync(string? searchValue) => String.IsNullOrEmpty(searchValue)
         ? await Users.AsQueryable().OrderByDescending(x => x.Id).ToListAsync()
         : await Users.AsQueryable().Where(x => x.Phonenumber == searchValue).ToListAsync();
+
+    public IQueryable<User?> GetQuerableUserAsync(string ? searchValue)
+    {
+        var users = from user in Users
+            select user;
+        if (!String.IsNullOrEmpty(searchValue))
+        {
+            users = users.Where(x => x.Phonenumber == searchValue);
+        }
+        return users.OrderByDescending(x=>x.Id);
+    }
 }

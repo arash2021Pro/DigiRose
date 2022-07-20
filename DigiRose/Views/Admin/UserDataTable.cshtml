@@ -1,11 +1,12 @@
 ﻿@using DigiRose.CoreBussiness.StorageEntity.Users
 @using System.Security.Claims
-@model List<DigiRose.CoreBussiness.StorageEntity.Users.User>
+@model DigiRose.Models.Admin.PaginatedList<User>
 <link rel="stylesheet" href="~/css/ManagerialPannel.css"/>
+<link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
 <form asp-action="UserDataTable" asp-controller="Admin" method="get">
     <div class="input-group mb-3 flex-md-row container-fluid" >
-      <button class="btn btn-primary" type="submit" style="border-radius: 30px" >جست و حو</button>
-      <input type="text" class="form-control" placeholder="جست و جوی کاربران ..." name="searchValue" style="border-radius: 30px">
+      <button class="btn btn-primary" type="submit" style="border-radius: 30px" ><i class="fa fa-search" aria-hidden="true"></i></button>
+      <input type="text"  class="form-control" placeholder="جست و جوی کاربران ..." name="searchValue" style="border-radius: 30px;text-align: center">
     </div>
 </form>
 <table class="table table-bordered table-hover  table-responsive-md table-light" >
@@ -45,18 +46,18 @@
                     @{
                         if (item.UserStatus == UserStatus.Active)
                         {
-                            <a href="@Url.Action("DeactivateUser","Admin",new{id=item.Id})})"><button class="btn btn-danger" style="border-radius: 30px" >مسدود</button></a>
+                            <a href="@Url.Action("DeactivateUser","Admin",new{id=item.Id})})"><button class="btn btn-danger" style="border-radius: 30px" ><i class="fa fa-times" aria-hidden="true"></i></button></a>
                            
                         }
                         else if (item.UserStatus == UserStatus.Inactive)
                         {
-                            <a href="@Url.Action("ActivateUser","Admin",new {Id=item.Id})"><button class="btn btn-success" style="border-radius: 30px" >فعال</button></a>
+                            <a href="@Url.Action("ActivateUser","Admin",new {Id=item.Id})"><button class="btn btn-success" style="border-radius: 30px" ><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
                          
                         }
                         else
                         {
-                            <a href="@Url.Action("DeactivateUser","Admin",new{id=item.Id})})"><button class="btn btn-danger" style="border-radius: 30px" >مسدود</button></a>
-                            <a href="@Url.Action("ActivateUser","Admin",new {Id=item.Id})"><button class="btn btn-success" style="border-radius: 30px" >فعال</button></a>
+                            <a href="@Url.Action("DeactivateUser","Admin",new{id=item.Id})})"><button class="btn btn-danger" style="border-radius: 30px" ><i class="fa fa-times" aria-hidden="true"></i></button></a>
+                            <a href="@Url.Action("ActivateUser","Admin",new {Id=item.Id})"><button class="btn btn-success" style="border-radius: 30px" ><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
                         }
                     }
                 </td>
@@ -67,3 +68,30 @@
     }
     </tbody>
 </table>
+
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+
+<a asp-action="UserDataTable" asp-controller="Admin"
+   
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   
+   class="btn btn-primary @nextDisabled">
+    <i class="fa fa-share" aria-hidden="true"></i>
+</a>
+
+
+<a asp-action="UserDataTable" asp-controller="Admin"
+  
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   
+   class="btn btn-primary @prevDisabled">
+ <i class="fa fa-reply" aria-hidden="true"></i>
+</a>
+
+
+
