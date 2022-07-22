@@ -31,7 +31,7 @@
 </div>
 
 <div class="sidebar-header">
-    <img src="@Url.Action("", "")" style="background-position: center;background-size: cover;border-radius: 45px;height: 100px;width: 100px">
+    <img src="@Url.Action("DownloadLogo", "Admin")" style="background-position: center;background-size: cover;border-radius: 45px;height: 100px;width: 100px">
     <div class="user-info">
 
         <span class="user-name">
@@ -135,8 +135,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/Admin/ShowBanners">
-                            جایگاه ها
+                        <a asp-controller="Admin" asp-action="UploadLogo">
+                            بارگذاری لوگو
                         </a>
                     </li>
                 </ul>

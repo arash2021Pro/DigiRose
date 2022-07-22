@@ -24,6 +24,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.RunBindService(builder.Configuration);
 builder.Services.RunAuthentication();
 builder.Services.AddResponseCompression(option => { option.EnableForHttps = true; });
+builder.Services.AddResponseCaching();
 var app = builder.Build();
 //app.RunInitialScope();
 // Configure the HTTP request pipeline.
@@ -36,6 +37,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpLogging();
 app.UseHttpsRedirection();
+app.UseResponseCaching();
 app.UseHangfireDashboard();
 app.UseStaticFiles();
 

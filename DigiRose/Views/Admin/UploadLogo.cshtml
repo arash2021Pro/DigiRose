@@ -1,0 +1,13 @@
+﻿@model DigiRose.Models.Admin.LogoViewModel
+@{
+    Layout = "ManagerialPannel";
+}
+
+<form asp-controller="Admin" asp-action="UploadLogo" style="display: grid;justify-content: center;position: relative;top:240px" enctype="multipart/form-data">
+    <input type="file" class="form-control" asp-for="File" style="text-align: center" placeholder="فایل"/> <br><br>
+    <span asp-validation-for="File" class="text-danger"></span>
+    <button class="btn btn-primary" type="submit">ارسال</button>
+</form>
+
+
+

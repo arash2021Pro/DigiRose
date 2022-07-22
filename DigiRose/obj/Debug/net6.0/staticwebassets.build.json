@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7hc/AVdpDnoJ+UyY3Vmbn+5berA5PP+nEi+pOvUudQs=",
+  "Hash": "XPeZQUgABty9PiGkp61wAiV4nsoedo7lFrVnvFo2qhY=",
   "Source": "DigiRose",
   "BasePath": "_content/DigiRose",
   "Mode": "Default",
@@ -763,6 +763,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\font-awesome-4.7.0\\scss\\font-awesome.scss"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\RiderProjects\\DigiRose\\DigiRose\\wwwroot\\Images\\SiteLogo\\2.png",
+      "SourceId": "DigiRose",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\RiderProjects\\DigiRose\\DigiRose\\wwwroot\\",
+      "BasePath": "_content/DigiRose",
+      "RelativePath": "Images/SiteLogo/2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\SiteLogo\\2.png"
     },
     {
       "Identity": "C:\\Users\\admin\\RiderProjects\\DigiRose\\DigiRose\\wwwroot\\js\\ManagerialPannel.js",

@@ -56,11 +56,9 @@ public class UserService : IUserService
     public async Task<User?> SearchUserAsync(string? RefCode) =>
         await Users.FirstOrDefaultAsync(x => x.ReferralSerial == RefCode);
 
-    public async Task<List<User?>> GetUserListAsync(string? searchValue) => String.IsNullOrEmpty(searchValue)
-        ? await Users.AsQueryable().OrderByDescending(x => x.Id).ToListAsync()
-        : await Users.AsQueryable().Where(x => x.Phonenumber == searchValue).ToListAsync();
 
-    public IQueryable<User?> GetQuerableUserAsync(string ? searchValue)
+
+    public IQueryable<User?> GetQuerableUserAsync(string ? searchValue,string? sortOrder)
     {
         var users = from user in Users
             select user;
@@ -68,6 +66,15 @@ public class UserService : IUserService
         {
             users = users.Where(x => x.Phonenumber == searchValue);
         }
-        return users.OrderByDescending(x=>x.Id);
+        switch (sortOrder)
+        {
+            case "Desc":
+                return users.OrderByDescending(x => x.Id);
+            case "Aesc":
+                return users.OrderBy(x => x.Id);
+            case "Date":
+                return users.OrderBy(x => x.CurrentDate);
+        }
+        return users;
     }
 }

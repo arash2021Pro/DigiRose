@@ -14,6 +14,7 @@ using DigiRose.CoreBussiness.StorageEntity.Roles;
 using DigiRose.CoreBussiness.StorageEntity.Users;
 using DigiRose.CoreStorage.SqlContext;
 using DigiRose.CoreStructure.MessageService;
+using DigiRose.ModuleServices.FileCoreHandlerService;
 using Hangfire.Logging;
 using MapsterMapper;
 
@@ -33,5 +34,6 @@ public static class CoreApplication
         service.AddScoped<IPermissionService, PermissionService>();
         service.AddScoped<IRolePermissionService, RolePermissionService>();
         service.AddScoped<ILogService, LogService>();
+        service.AddScoped<IFileManager, FileManager>();
     }
 }

@@ -1,74 +1,88 @@
 ﻿@using DigiRose.CoreBussiness.StorageEntity.Users
 @using System.Security.Claims
 @model DigiRose.Models.Admin.PaginatedList<User>
+@{
+    Layout = "ManagerialPannel";
+}
 <link rel="stylesheet" href="~/css/ManagerialPannel.css"/>
 <link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
 <form asp-action="UserDataTable" asp-controller="Admin" method="get">
     <div class="input-group mb-3 flex-md-row container-fluid" >
-      <button class="btn btn-primary" type="submit" style="border-radius: 30px" ><i class="fa fa-search" aria-hidden="true"></i></button>
-      <input type="text"  class="form-control" placeholder="جست و جوی کاربران ..." name="searchValue" style="border-radius: 30px;text-align: center">
+        <button class="btn btn-primary" type="submit" style="border-radius: 30px" ><i class="fa fa-search" aria-hidden="true"></i></button>
+        <input type="text"  class="form-control" placeholder="جست و جوی کاربران ..." name="searchValue" style="border-radius: 30px;text-align: center">
     </div>
 </form>
-<table class="table table-bordered table-hover  table-responsive-md table-light" >
-    <thead>
-    <tr>
-        <th  style="border-radius: 30px">شماره موبایل</th>
-        <th  style="border-radius: 30px">وضعیت</th>
-        <th  style="border-radius: 30px">نقش</th>
-        <th  style="border-radius: 30px">اقدامات</th>
-    </tr>
-    </thead>
-    <tbody style="border-radius: 30px">
-    @{
-        foreach (var item in Model)
-        {
-            <tr>
-                
-                <td style="border-radius: 30px" ><strong> <span class="bg bg-warning" style="border-radius: 30px">@item.Phonenumber</span></strong></td>
-                @{
-                    if (item.UserStatus == UserStatus.None)
-                    {
-                        <td  style="border-radius: 30px"><span class="bg bg-secondary" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
-                                                                                 
-                    }
-                    else if (item.UserStatus == UserStatus.Active)
-                    {
-                        <td  style="border-radius: 30px"><span class="bg bg-success" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
-                    }
-                    else
-                    {
-                        <td  style="border-radius: 30px"><span class="bg bg-danger" style="border-radius: 30px" >@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
-                    }
-                }
-                <td style="border-radius: 30px" > <span class="bg bg-warning" style="border-radius: 30px">@DigiRose.Models.Admin.UserRole.GetUserRoleName(item.RoleId)</span></td>
-                
-                <td  style="border-radius: 30px" >
+<form  asp-action="UserDataTable" asp-controller="Admin" method="get">
+    <input type="text" name="sortOrder" list="params" style="border-radius: 30px" class="form-control-sm" />
+    <datalist id="params">
+        <option>Desc</option>
+        <option>Aesc</option>
+        <option>Date</option>
+    </datalist>
+    <button class="btn btn-primary" style="border-radius: 30px"  type="submit">مرتب سازی</button>
+</form>
+
+<cache enabled="true" expires-sliding="@TimeSpan.FromSeconds(10)">
+    
+    <table class="table table-bordered table-hover  table-responsive-md table-light">
+        <thead>
+        <tr>
+            <th style="border-radius: 30px">شماره موبایل</th>
+            <th style="border-radius: 30px">وضعیت</th>
+            <th style="border-radius: 30px">نقش</th>
+            <th style="border-radius: 30px">اقدامات</th>
+        </tr>
+        </thead>
+        <tbody style="border-radius: 30px">
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+
+                    <td style="border-radius: 30px"><strong> <span class="bg bg-warning" style="border-radius: 30px">@item.Phonenumber</span></strong></td>
                     @{
-                        if (item.UserStatus == UserStatus.Active)
+                        if (item.UserStatus == UserStatus.None)
                         {
-                            <a href="@Url.Action("DeactivateUser","Admin",new{id=item.Id})})"><button class="btn btn-danger" style="border-radius: 30px" ><i class="fa fa-times" aria-hidden="true"></i></button></a>
-                           
+                            <td style="border-radius: 30px"><span class="bg bg-secondary" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
+
                         }
-                        else if (item.UserStatus == UserStatus.Inactive)
+                        else if (item.UserStatus == UserStatus.Active)
                         {
-                            <a href="@Url.Action("ActivateUser","Admin",new {Id=item.Id})"><button class="btn btn-success" style="border-radius: 30px" ><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
-                         
+                            <td style="border-radius: 30px"><span class="bg bg-success" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
                         }
                         else
                         {
-                            <a href="@Url.Action("DeactivateUser","Admin",new{id=item.Id})})"><button class="btn btn-danger" style="border-radius: 30px" ><i class="fa fa-times" aria-hidden="true"></i></button></a>
-                            <a href="@Url.Action("ActivateUser","Admin",new {Id=item.Id})"><button class="btn btn-success" style="border-radius: 30px" ><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
+                            <td style="border-radius: 30px"><span class="bg bg-danger" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
                         }
                     }
-                </td>
-              
-                
-            </tr>
-        }
-    }
-    </tbody>
-</table>
+                    <td style="border-radius: 30px"> <span class="bg bg-warning" style="border-radius: 30px">@DigiRose.Models.Admin.UserRole.GetUserRoleName(item.RoleId)</span></td>
 
+                    <td style="border-radius: 30px">
+                        @{
+                            if (item.UserStatus == UserStatus.Active)
+                            {
+                                <a asp-controller="Admin" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
+
+                            }
+                            else if (item.UserStatus == UserStatus.Inactive)
+                            {
+                                <a id="active" asp-controller="Admin" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
+                            }
+                            else
+                            {
+                                <a  asp-controller="Admin" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
+                                <a asp-controller="Admin" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
+                            }
+                        }
+                    </td>
+
+
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</cache>
 
 @{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";

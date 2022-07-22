@@ -10,6 +10,5 @@ public interface IUserService
     Task<User> GetUserAsync(string password, string Phonenumber);
     public string GenerateHash(string password);
     Task<User?> SearchUserAsync(string? RefCore);
-    Task<List<User?>> GetUserListAsync(string? searchValue);
-    IQueryable<User?> GetQuerableUserAsync(string ? searchValue);
+    IQueryable<User?> GetQuerableUserAsync(string ? searchValue,string ?sortOrder);
 }
