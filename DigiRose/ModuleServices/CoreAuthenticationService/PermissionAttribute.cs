@@ -21,12 +21,12 @@ public class PermissionAttribute:AuthorizeAttribute,IAsyncAuthorizationFilter
             var RoleId = CoreServiceManager.UserService.GetUserRoleIdAsync(Phonenumber);
             if (!await CoreServiceManager.RolePermissionService.HasPermissionAsync(RoleId, permissionId))
             {
-                context.Result = new RedirectResult("/User/Login");
+                context.Result = new RedirectResult("/Auth/logout");
             }
         }
         else
         {
-            context.Result = new RedirectResult("/User/Login");
+            context.Result = new RedirectResult("/Auth/Login");
         }
        
     }

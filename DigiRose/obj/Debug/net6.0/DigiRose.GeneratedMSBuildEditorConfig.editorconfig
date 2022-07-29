@@ -23,8 +23,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBsb2FkTG9nby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Admin/UserDataTable.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckRhdGFUYWJsZS5jc2h0bWw=
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Auth/ForgetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3JnZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Auth/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Auth/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Auth/Verify.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxWZXJpZnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Auth/VerifyUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxWZXJpZnlVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Home/Index.cshtml]
@@ -35,8 +55,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Product/AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBZGRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Shared/AuthTemplate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEF1dGhUZW1wbGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Shared/Components/ImageLogoComponent/default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSW1hZ2VMb2dvQ29tcG9uZW50XGRlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/Shared/ManagerialPannel.cshtml]
@@ -47,28 +75,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/User/ForgetPassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb3JnZXRQYXNzd29yZC5jc2h0bWw=
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/User/EditUserPhone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0VXNlclBob25lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/User/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/User/ResetPassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZXNldFBhc3N3b3JkLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/User/Signup.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTaWdudXAuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/User/Verify.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxWZXJpZnkuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/User/VerifyUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxWZXJpZnlVc2VyLmNzaHRtbA==
+[C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/User/UserDataTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyRGF0YVRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/RiderProjects/DigiRose/DigiRose/Views/_ViewImports.cshtml]

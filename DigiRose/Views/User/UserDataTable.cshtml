@@ -1,18 +1,30 @@
 ﻿@using DigiRose.CoreBussiness.StorageEntity.Users
 @using System.Security.Claims
 @model DigiRose.Models.Admin.PaginatedList<User>
+}
+
+<html>
+<header>
+    <link rel="stylesheet" href="~/css/ManagerialPannel.css"/>
+    <link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
+</header>
 @{
     Layout = "ManagerialPannel";
 }
-<link rel="stylesheet" href="~/css/ManagerialPannel.css"/>
-<link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
-<form asp-action="UserDataTable" asp-controller="Admin" method="get">
+
+<body>
+
+<div class="container-fluid">
+    <div class="row margin-top-50">
+        <div class="col-md-10 col-md offset-8 col-md-8 col-md offset-8 col-sm-8 col-sm offset-8 col-xl-offset-7 col-xl-9-offset-9 loginbox">
+
+<form asp-action="UserDataTable" asp-controller="User" method="get">
     <div class="input-group mb-3 flex-md-row container-fluid" >
         <button class="btn btn-primary" type="submit" style="border-radius: 30px" ><i class="fa fa-search" aria-hidden="true"></i></button>
         <input type="text"  class="form-control" placeholder="جست و جوی کاربران ..." name="searchValue" style="border-radius: 30px;text-align: center">
     </div>
 </form>
-<form  asp-action="UserDataTable" asp-controller="Admin" method="get">
+<form  asp-action="UserDataTable" asp-controller="User" method="get">
     <input type="text" name="sortOrder" list="params" style="border-radius: 30px" class="form-control-sm" />
     <datalist id="params">
         <option>Desc</option>
@@ -22,8 +34,8 @@
     <button class="btn btn-primary" style="border-radius: 30px"  type="submit">مرتب سازی</button>
 </form>
 
-<cache enabled="true" expires-sliding="@TimeSpan.FromSeconds(10)">
-    
+
+
     <table class="table table-bordered table-hover  table-responsive-md table-light">
         <thead>
         <tr>
@@ -38,7 +50,6 @@
             foreach (var item in Model)
             {
                 <tr>
-
                     <td style="border-radius: 30px"><strong> <span class="bg bg-warning" style="border-radius: 30px">@item.Phonenumber</span></strong></td>
                     @{
                         if (item.UserStatus == UserStatus.None)
@@ -61,28 +72,32 @@
                         @{
                             if (item.UserStatus == UserStatus.Active)
                             {
-                                <a asp-controller="Admin" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
+                                <a asp-controller="User" asp-action="DeactivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
+                  
 
                             }
                             else if (item.UserStatus == UserStatus.Inactive)
                             {
-                                <a id="active" asp-controller="Admin" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
+                                <a id="active" asp-controller="User" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
+                                
                             }
                             else
                             {
-                                <a  asp-controller="Admin" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
-                                <a asp-controller="Admin" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
+                                <a  asp-controller="User" asp-action="DeactivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
+                                <a asp-controller="User" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
+                                
                             }
                         }
+                        <a asp-controller="User" asp-action="EditUserPhone" asp-route-Id="@(item.Id)"><button class="btn btn-info" style="border-radius: 30px"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
                     </td>
-
 
                 </tr>
             }
         }
         </tbody>
     </table>
-</cache>
+
+
 
 @{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
@@ -90,7 +105,9 @@
 }
 
 
-<a asp-action="UserDataTable" asp-controller="Admin"
+
+
+<a asp-action="UserDataTable" asp-controller="User"
    
    asp-route-pageNumber="@(Model.PageIndex + 1)"
    
@@ -99,13 +116,48 @@
 </a>
 
 
-<a asp-action="UserDataTable" asp-controller="Admin"
+<a asp-action="UserDataTable" asp-controller="User"
   
    asp-route-pageNumber="@(Model.PageIndex - 1)"
    
    class="btn btn-primary @prevDisabled">
  <i class="fa fa-reply" aria-hidden="true"></i>
 </a>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,14 +6,24 @@ using DigiRose.ModuleServices.ElmahCoreService;
 using DigiRose.ModuleServices.HangfireCoreServices;
 using DigiRose.ModuleServices.InitialDatabase;
 using DigiRose.ModuleServices.SerilogCoreService;
+using DigiRose.ModuleServices.SqlCacheCoreService;
 using DigiRose.ModuleServices.SqlServerServices;
 using ElmahCore.Mvc;
 using Hangfire;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(x =>
+{
+    x.CacheProfiles.Add("UserDefault",new CacheProfile()
+    {
+        Duration = 5,
+        NoStore = true,
+        Location = ResponseCacheLocation.Any
+    });
+});
 builder.Services.RunCoreApplication();
 builder.Services.RunSqlService(builder.Configuration);
 builder.Services.RunHangfireService(builder.Configuration);
@@ -25,6 +35,7 @@ builder.Services.RunBindService(builder.Configuration);
 builder.Services.RunAuthentication();
 builder.Services.AddResponseCompression(option => { option.EnableForHttps = true; });
 builder.Services.AddResponseCaching();
+builder.Services.RunSqlCacheService(builder.Configuration);
 var app = builder.Build();
 //app.RunInitialScope();
 // Configure the HTTP request pipeline.

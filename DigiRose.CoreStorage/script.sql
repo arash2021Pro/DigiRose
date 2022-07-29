@@ -141,3 +141,104 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'ModificationTime');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [Users] ALTER COLUMN [ModificationTime] nvarchar(max) NULL;
+GO
+
+DECLARE @var1 sysname;
+SELECT @var1 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[ShopCarts]') AND [c].[name] = N'ModificationTime');
+IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [ShopCarts] DROP CONSTRAINT [' + @var1 + '];');
+ALTER TABLE [ShopCarts] ALTER COLUMN [ModificationTime] nvarchar(max) NULL;
+GO
+
+DECLARE @var2 sysname;
+SELECT @var2 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Roles]') AND [c].[name] = N'ModificationTime');
+IF @var2 IS NOT NULL EXEC(N'ALTER TABLE [Roles] DROP CONSTRAINT [' + @var2 + '];');
+ALTER TABLE [Roles] ALTER COLUMN [ModificationTime] nvarchar(max) NULL;
+GO
+
+DECLARE @var3 sysname;
+SELECT @var3 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[RolePermissions]') AND [c].[name] = N'ModificationTime');
+IF @var3 IS NOT NULL EXEC(N'ALTER TABLE [RolePermissions] DROP CONSTRAINT [' + @var3 + '];');
+ALTER TABLE [RolePermissions] ALTER COLUMN [ModificationTime] nvarchar(max) NULL;
+GO
+
+DECLARE @var4 sysname;
+SELECT @var4 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Products]') AND [c].[name] = N'ModificationTime');
+IF @var4 IS NOT NULL EXEC(N'ALTER TABLE [Products] DROP CONSTRAINT [' + @var4 + '];');
+ALTER TABLE [Products] ALTER COLUMN [ModificationTime] nvarchar(max) NULL;
+GO
+
+DECLARE @var5 sysname;
+SELECT @var5 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Permissions]') AND [c].[name] = N'ModificationTime');
+IF @var5 IS NOT NULL EXEC(N'ALTER TABLE [Permissions] DROP CONSTRAINT [' + @var5 + '];');
+ALTER TABLE [Permissions] ALTER COLUMN [ModificationTime] nvarchar(max) NULL;
+GO
+
+DECLARE @var6 sysname;
+SELECT @var6 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Otps]') AND [c].[name] = N'ModificationTime');
+IF @var6 IS NOT NULL EXEC(N'ALTER TABLE [Otps] DROP CONSTRAINT [' + @var6 + '];');
+ALTER TABLE [Otps] ALTER COLUMN [ModificationTime] nvarchar(max) NULL;
+GO
+
+CREATE TABLE [Logs] (
+    [Id] int NOT NULL IDENTITY,
+    [BrowserName] nvarchar(max) NULL,
+    [Username] nvarchar(max) NULL,
+    [UserId] int NOT NULL,
+    [UrlAction] nvarchar(max) NULL,
+    [CurrentDate] nvarchar(max) NULL,
+    [CurrentTime] nvarchar(max) NULL,
+    [CreationTime] datetimeoffset NOT NULL,
+    [ModificationTime] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_Logs] PRIMARY KEY ([Id])
+);
+GO
+
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220717114651_Log', N'6.0.6');
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+ALTER TABLE [Products] ADD [filename] nvarchar(max) NULL;
+GO
+
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220729115844_filename', N'6.0.6');
+GO
+
+COMMIT;
+GO
+

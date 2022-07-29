@@ -1,0 +1,80 @@
+﻿@model DigiRose.Models.Admin.EditUserPhoneViewModel
+
+<html>
+<header>
+    <title>@ViewData["Title"] ویرایش موبایل کاربر</title>
+
+    <script src="js/site.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="~/js/Form.js"></script>
+    <link href="~/css/Form.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto%20Naskh%20Arabic" rel="stylesheet">
+        
+</header>
+@{
+    Layout = "ManagerialPannel";
+}
+<body>
+
+<div class="container-fluid">
+    <div class="row margin-top-50">
+        <div class="col-md-6 col-sm offset-4 col-sm-4 col-md offset-4 col-sm-4 col-sm offset-4 col-xl-offset-3 col-xl-5-offset-5 loginbox">
+         
+            @{
+                if (Model != null && !String.IsNullOrEmpty(Model.Message) && !Model.IsCompleted)
+                {
+                    <div class="alert alert-danger hide">@Model.Message</div>
+                }
+            }
+            <div class="container-fluid col-sm-8  card">
+                <div class="row" id="row1">
+                    
+                    
+                    <p id="digirose">DigiRose</p>
+            
+                    <hr>
+            
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="sub-form" asp-controller="User"  asp-action="EditUserPhone" method="post" style="display:block;">
+                             
+                                    <div class="form-group">
+                                        <input type="text"  asp-for="Phonenumber" style="text-align: center" list="types" class="form-control" placeholder="موبایل ...">
+                                        <span asp-validation-for="Phonenumber" class="text-danger"></span>
+                                    </div>
+                      
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <button type="submit" class="form-control btn btn-primary">ویرایش</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+            
+            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <script src="~/js/Form.js"></script>
+            
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,119 @@
+﻿@model DigiRose.Models.Product.AddProductViewModel
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>اضافه سازی محصول</title>
+    <link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="js/site.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="~/js/Form.js"></script>
+    <link href="~/css/Form.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto%20Naskh%20Arabic" rel="stylesheet">
+</head>
+@{
+    Layout = "ManagerialPannel";
+}
+<body>
+
+<div class="container-fluid">
+    <div class="row margin-top-50">
+        <div class="col-md-6 col-sm offset-4 col-sm-4 col-md offset-4 col-sm-4 col-sm offset-4 col-xl-offset-3 col-xl-5-offset-5 loginbox">
+            
+                    
+        
+        @{
+            if (Model != null && !String.IsNullOrEmpty(Model.Message) && Model.IsCompleted)
+            {
+                <div class="alert alert-success hide" style="text-align: center">@Model.Message</div>
+            }
+            else if (Model != null && !String.IsNullOrEmpty(Model.Message))
+            {
+                <div class="alert alert-danger hide" style="text-align: center">@Model.Message</div>
+            }
+        }
+
+            
+            <div class="container-fluid col-sm-8  card">
+    <div class="row" id="row1">
+
+        
+        
+        <p id="digirose">DigiRose</p>
+
+        <hr>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="sub-form" asp-controller="Product" enctype="multipart/form-data" asp-action="AddProduct" method="post" style="display:block;">
+                        <div class="form-group">
+                            <input type="text" asp-for="ProductName" id="username" style="text-align: center" class="form-control" placeholder="نام محصول ...">
+                            <span asp-validation-for="ProductName" class="text-danger"></span>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="text" asp-for="Price" style="text-align: center" id="username" class="form-control" placeholder=" قیمت محصول ...">
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="number" asp-for="Count" style="text-align: center" id="username" class="form-control" placeholder="تعداد محصول ...">
+                            <span asp-validation-for="Count" class="text-danger"></span>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="text"  asp-for="Category" style="text-align: center" list="types" class="form-control" placeholder="نوع محصول ...">
+                            <span asp-validation-for="Category" class="text-danger"></span>
+                        </div>
+                        <br>
+                        <datalist id="types">
+                            <option value="1">درجه یک </option>
+                            <option value="2">درجه دو </option>
+                            <option value="3">درجه سه </option>
+                        </datalist>
+                        
+                        <div class="form-group">
+                            <input type="file" asp-for="File" style="text-align: center" id="username" class="form-control" placeholder="عکس محصول ...">
+                            <span asp-validation-for="File" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-6" style="float:right;">
+                                        <input type="checkbox" asp-for="IsEnough" id="remember">
+                                        <span asp-validation-for="IsEnough"></span>
+                                        <label for="remember" id="remember-text" style="color: deeppink">محصول کافی هست ؟ </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button type="submit" class="form-control btn btn-primary">اضافه سازی محصول</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<script src="~/js/Form.js"></script>
+            
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

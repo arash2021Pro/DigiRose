@@ -11,5 +11,6 @@ public class Product:Core
     public int Count { get; set; }
     public bool IsEnough { get; set; }
     public Category Category { get; set; }
+    public string?filename { get; set; }
     public ICollection<ShopCart>ShopCarts { get; set; }
 }

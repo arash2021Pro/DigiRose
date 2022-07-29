@@ -7,6 +7,12 @@
       "commands": [
         "dotnet-ef"
       ]
+    },
+    "jetbrains.dottrace.globaltools": {
+      "version": "2022.1.2",
+      "commands": [
+        "dottrace"
+      ]
     }
   }
 }

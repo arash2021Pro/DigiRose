@@ -1,6 +1,7 @@
 ﻿@using System.Security.Claims
 <html>
 <head>
+    
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="~/css/Account.css">
     <link rel="stylesheet" href="~/css/ManagerialPannel.css">
     <link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
-   
+
     <title>ManagerialPannel</title>
 </head>
 <body>
@@ -31,7 +32,8 @@
 </div>
 
 <div class="sidebar-header">
-    <img src="@Url.Action("DownloadLogo", "Admin")" style="background-position: center;background-size: cover;border-radius: 45px;height: 100px;width: 100px">
+    @await Component.InvokeAsync("ImageLogoComponent")
+
     <div class="user-info">
 
         <span class="user-name">
@@ -45,17 +47,7 @@
             <span>آنلاین</span>
         </span>
     </div>
-    <div class="user-pic">
-        @if (User.IsInRole("admin"))
-        {
-
-        }
-        else
-        {
-
-        }
-    </div>
-
+    
 </div>
 
 <div class="sidebar-menu">
@@ -69,7 +61,7 @@
             <div class="sidebar-submenu">
                 <ul>
                     <li>
-                        <a asp-action="UserDataTable" asp-controller="Admin">
+                        <a asp-action="UserDataTable" asp-controller="User">
                             مشتریان
                         </a>
                     </li>
@@ -99,8 +91,8 @@
             <div class="sidebar-submenu">
                 <ul>
                     <li>
-                        <a href="@Url.Action("", "")">
-                            سردسته ها
+                        <a asp-action="AddProduct" asp-controller="Product">
+                          اضافه سازی محصول
                         </a>
                     </li>
                     <li>
@@ -277,7 +269,7 @@
             <span class="badge badge-pill badge-warning notification">5</span>
         </a>
 
-        <a href="@Url.Action("logout", "User")">
+        <a href="@Url.Action("logout", "Auth")">
             <i class="fa fa-power-off"></i>
         </a>
     }

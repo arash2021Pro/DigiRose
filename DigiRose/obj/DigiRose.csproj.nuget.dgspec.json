@@ -358,6 +358,10 @@
               "target": "Package",
               "version": "[6.0.6, )"
             },
+            "Microsoft.Extensions.Caching.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.6, )"

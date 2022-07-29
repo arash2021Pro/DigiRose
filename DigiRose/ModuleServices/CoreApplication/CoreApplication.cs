@@ -2,6 +2,7 @@
 using DigiRose.CoreApplication.LogApplication;
 using DigiRose.CoreApplication.OtpApplication;
 using DigiRose.CoreApplication.PermissionApplication;
+using DigiRose.CoreApplication.ProductApplication;
 using DigiRose.CoreApplication.RoleApplication;
 using DigiRose.CoreApplication.RolePermissionApplication;
 using DigiRose.CoreApplication.UserApplication;
@@ -9,6 +10,7 @@ using DigiRose.CoreBussiness.RepsPattern;
 using DigiRose.CoreBussiness.StorageEntity;
 using DigiRose.CoreBussiness.StorageEntity.Logging;
 using DigiRose.CoreBussiness.StorageEntity.OTP;
+using DigiRose.CoreBussiness.StorageEntity.Products;
 using DigiRose.CoreBussiness.StorageEntity.RolePermissions;
 using DigiRose.CoreBussiness.StorageEntity.Roles;
 using DigiRose.CoreBussiness.StorageEntity.Users;
@@ -35,5 +37,6 @@ public static class CoreApplication
         service.AddScoped<IRolePermissionService, RolePermissionService>();
         service.AddScoped<ILogService, LogService>();
         service.AddScoped<IFileManager, FileManager>();
+        service.AddScoped<IProductService, ProductService>();
     }
 }

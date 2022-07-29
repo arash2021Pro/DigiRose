@@ -1,6 +1,7 @@
 ﻿using DigiRose.CoreBussiness.StorageEntity;
 using DigiRose.CoreBussiness.StorageEntity.Logging;
 using DigiRose.CoreBussiness.StorageEntity.OTP;
+using DigiRose.CoreBussiness.StorageEntity.Products;
 using DigiRose.CoreBussiness.StorageEntity.RolePermissions;
 using DigiRose.CoreBussiness.StorageEntity.Roles;
 using DigiRose.CoreBussiness.StorageEntity.Users;
@@ -15,4 +16,5 @@ public interface ICoreServiceManager
     public IPermissionService PermissionService { get; set; }
     public IRolePermissionService RolePermissionService { get; set; }
     public ILogService LogService { get; set; }
+    public IProductService ProductService { get; set; }
 }

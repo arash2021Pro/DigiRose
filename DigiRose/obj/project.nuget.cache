@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ev9KTrI+GVRVbDHFW03J1qbA/P1Jv+hVuNyGc/O4iMfpv5YCZIlGORCjYV/il8uDj4NE0SMemBSFp6+H6jcAqw==",
+  "dgSpecHash": "bwHzMfcCufajxlrz5iayqN9qZMVaSBO2vOChAT/XE9zSHq2cjuSO6G5jf6Sgq5Yuixok1EsOjf0+RES/IfMaug==",
   "success": true,
   "projectFilePath": "C:\\Users\\admin\\RiderProjects\\DigiRose\\DigiRose\\DigiRose.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,7 @@
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.6\\microsoft.entityframeworkcore.tools.6.0.6.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.caching.sqlserver\\6.0.6\\microsoft.extensions.caching.sqlserver.6.0.6.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.configuration\\2.0.0\\microsoft.extensions.configuration.2.0.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.0.0\\microsoft.extensions.configuration.binder.2.0.0.nupkg.sha512",

@@ -2,5 +2,5 @@
 
 public enum Category
 {
-    FirstClass,SecondClass,ThirdClass
+    FirstClass = 1,SecondClass = 2,ThirdClass = 3
 }

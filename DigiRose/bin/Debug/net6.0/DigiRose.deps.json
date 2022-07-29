@@ -21,6 +21,7 @@
           "Microsoft.EntityFrameworkCore.Design": "6.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.6",
+          "Microsoft.Extensions.Caching.SqlServer": "6.0.6",
           "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": "6.0.6",
           "NodaTime": "3.1.0",
           "Serilog.AspNetCore": "5.0.0",
@@ -394,6 +395,19 @@
           "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.6406"
+          }
+        }
+      },
+      "Microsoft.Extensions.Caching.SqlServer/6.0.6": {
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "2.1.4",
+          "Microsoft.Extensions.Caching.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.Caching.SqlServer.dll": {
+            "assemblyVersion": "6.0.6.0",
+            "fileVersion": "6.0.622.26805"
           }
         }
       },
@@ -1877,6 +1891,13 @@
       "sha512": "sha512-B4y+Cev05eMcjf1na0v9gza6GUtahXbtY1JCypIgx3B4Ea/KAgsWyXEmW4q6zMbmTMtKzmPVk09rvFJirvMwTg==",
       "path": "microsoft.extensions.caching.memory/6.0.1",
       "hashPath": "microsoft.extensions.caching.memory.6.0.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.SqlServer/6.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZVlVBix1KDpeqjUZxQbdKMrHxwuzHCkKNFIIXlWtbesmZzeuFADQJdxAM20mlAO7gvM8sB8Nz0uhVK/0k0nRSA==",
+      "path": "microsoft.extensions.caching.sqlserver/6.0.6",
+      "hashPath": "microsoft.extensions.caching.sqlserver.6.0.6.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/2.0.0": {
       "type": "package",

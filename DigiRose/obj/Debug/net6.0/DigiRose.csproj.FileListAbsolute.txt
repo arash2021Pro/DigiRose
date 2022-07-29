@@ -119,3 +119,4 @@ C:\Users\admin\RiderProjects\DigiRose\DigiRose\bin\Debug\net6.0\DigiRose.CoreApp
 C:\Users\admin\RiderProjects\DigiRose\DigiRose\bin\Debug\net6.0\DigiRose.CoreStructure.dll
 C:\Users\admin\RiderProjects\DigiRose\DigiRose\bin\Debug\net6.0\DigiRose.CoreApplication.pdb
 C:\Users\admin\RiderProjects\DigiRose\DigiRose\bin\Debug\net6.0\DigiRose.CoreStructure.pdb
+C:\Users\admin\RiderProjects\DigiRose\DigiRose\bin\Debug\net6.0\Microsoft.Extensions.Caching.SqlServer.dll
