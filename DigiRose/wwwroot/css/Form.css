@@ -1,0 +1,90 @@
+﻿@font-face {
+    font-family: 'Noto Naskh Arabic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/notonaskharabic/v18/RrQ5bpV-9Dd1b1OAGA6M9PkyDuVBePeKNaxcsss0Y7bwvc5Urqcy.woff2) format('woff2');
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    font-family: "Noto Naskh Arabic", sans-serif !important
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#background{
+    padding: 10px;
+}
+
+#digirose{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 4rem;
+    color: #fc627c;
+}
+
+.panel{
+    z-index: 2px;
+}
+
+.col-xs-6{
+    display: inline;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.panel-heading {
+    padding-top: 18px;
+    font-size: 1.2em;
+    height: 61px;
+    margin-bottom: 30px;
+}
+
+#login-link, #register-link {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#login-link {
+    color: #fc627c;
+    border-bottom: solid 3px #fc627c;
+}
+
+#register-link {
+    color: #4E5166;
+}
+
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+    height: 40px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#login-submit, #register-submit {
+    background-color: #4E5166;
+    text-decoration: none;
+    color: #fff !important;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 0;
+}
+
+#forgot-password {
+    text-decoration: none;
+    color: #fa788d !important;
+    font-weight: lighter;
+    text-align: right;
+    float: right;
+}
+
+#remember-text {
+    font-size: 1em;
+    font-weight: 300;
+}
