@@ -9,5 +9,6 @@ public class ProductConfiguration:IEntityTypeConfiguration<Product>
     public void Configure(EntityTypeBuilder<Product> builder)
     {
         builder.Property(x => x.ProductName).IsRequired(false);
+        builder.Property(x => x.filename).IsRequired(false);
     }
 }

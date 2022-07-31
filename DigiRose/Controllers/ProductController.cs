@@ -1,4 +1,5 @@
-﻿using DigiRose.CoreApplication.CoreManagerApplication;
+﻿using System.Web;
+using DigiRose.CoreApplication.CoreManagerApplication;
 using DigiRose.CoreBussiness.RepsPattern;
 using DigiRose.CoreBussiness.StorageEntity.ProductCategory;
 using DigiRose.CoreBussiness.StorageEntity.Products;
@@ -34,10 +35,10 @@ public class ProductController:Controller
     [HttpGet]
     public async Task<IActionResult> AddProduct(string ?Message,bool IsCompleted)
     {
-
+        
         var model = new AddProductViewModel()
         {
-            Message = Message,IsCompleted = IsCompleted
+            Message = HttpUtility.UrlDecode(Message?.Replace("-","")),IsCompleted = IsCompleted
         };
         
         return View(model);
@@ -68,6 +69,7 @@ public class ProductController:Controller
                 Category = model.Category,
                 filename = extention
             };
+            
             await CoreServiceManager.ProductService.AddNewProductAsync(product);
             var change = await Work.SaveChangesAsync();
             if (change > 0)
@@ -76,7 +78,7 @@ public class ProductController:Controller
                 model.IsCompleted = true;
                 model.Message = "محصول اضافه شد";
                 return RedirectToAction("AddProduct", "Product",
-                    new {Message = model.Message,IsCompleted = model.IsCompleted});
+                    new {Message = HttpUtility.UrlEncode(model.Message.Replace("-","")),IsCompleted = model.IsCompleted});
             }
             model.IsCompleted = false;
             model.Message = "خطا در ثبت محصول";
@@ -84,6 +86,6 @@ public class ProductController:Controller
         }
         return View(model);
     }
-
+    
 
 }

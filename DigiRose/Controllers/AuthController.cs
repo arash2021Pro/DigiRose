@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Security.Claims;
+using System.Web;
 using DigiRose.CoreApplication.CoreManagerApplication;
 using DigiRose.CoreBussiness.RepsPattern;
 using DigiRose.CoreBussiness.StorageEntity.OTP;
@@ -70,7 +71,7 @@ public class AuthController:Controller
                 if (change > 0)
                 {
                    // BackgroundJob.Enqueue(() => MessageService.SendMessageAsync(user.Phonenumber, "DigiRose", code));
-                   return RedirectToAction("Verify",new {phonenumber = model.Phonenumber});
+                   return RedirectToAction("Verify",new {phonenumber = HttpUtility.UrlEncode(model.Phonenumber.Replace("-",""))});
                 }
             } 
             return View(model);
@@ -130,7 +131,7 @@ public class AuthController:Controller
     public async Task<IActionResult> Verify(string? phonenumber)
     {
         var otp = new VerifyViewModel();
-        otp.phonenumber = phonenumber;
+        otp.phonenumber = HttpUtility.UrlDecode(phonenumber.Replace("-",""));
         return View(otp);
     }
 
@@ -189,7 +190,7 @@ public class AuthController:Controller
             if (change > 0)
             {
                 //BackgroundJob.Enqueue(() => MessageService.SendMessageAsync(user.Phonenumber, "DigiRose", code));
-                return RedirectToAction("VerifyUser", "Auth",new{Phone = model.Phonenumber});
+                return RedirectToAction("VerifyUser", "Auth",new{Phone = HttpUtility.UrlEncode(model.Phonenumber.Replace("-",""))});
             }
         }
         return View(model);
@@ -197,7 +198,7 @@ public class AuthController:Controller
     [HttpGet]
     public async Task<IActionResult> VerifyUser(string ? Phone)
     {
-        var Verify = new VerifyUserViewModel() {Phone = Phone};
+        var Verify = new VerifyUserViewModel() {Phone = HttpUtility.UrlDecode(Phone.Replace("-",""))};
         return View(Verify);
     }
     [HttpPost]
@@ -214,7 +215,7 @@ public class AuthController:Controller
                     model.IsCompleted = true;
                     model.Message = "هویت شما تایید شد";
                     return RedirectToAction("ResetPassword", "Auth",
-                        new {Id = otp.UserId, Message = model.Message, IsCompleted = model.IsCompleted});
+                        new {Id = otp.UserId, Message = HttpUtility.UrlEncode(model.Message.Replace("-","")), IsCompleted = model.IsCompleted});
                 }
             }
             model.IsCompleted = false;
@@ -227,7 +228,7 @@ public class AuthController:Controller
     [HttpGet]
     public async Task<IActionResult> ResetPassword(int Id,string Message,bool IsCompleted)
     {
-        var resetpass = new ResetPasswordViewModel() {Id = Id, Message = Message, IsCompleted = IsCompleted};
+        var resetpass = new ResetPasswordViewModel() {Id = Id, Message = HttpUtility.UrlDecode(Message.Replace("-","")), IsCompleted = IsCompleted};
         return View(resetpass);
     }
 

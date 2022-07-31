@@ -85,7 +85,4 @@ public class AdminController:Controller
         var data = await FileManager.DownloadImageAsync(_environment, "Images", "SiteLogo", User.GetCurrentUserId());
         return File(data,"Image/png");
     }
-
-  
-
 }

@@ -1,10 +1,13 @@
-﻿@model DigiRose.Models.Users.VerifyUserViewModel
+﻿@using System.Web
+@using HtmlAgilityPack
+@model DigiRose.Models.Users.VerifyUserViewModel
 
 <html>
 <header>
     <link rel="stylesheet" href="~/css/AuthForm.css">
     <title>@ViewData["Title"]احراز هویت کاریری</title>
     <link rel="stylesheet" href="~/css/Account.css">
+        <link rel = "icon" href ="~/Images/SiteLogo/2.png" type = "image/x-icon">
     <link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
         <script src="js/site.js"></script>
         <meta charset="UTF-8">
@@ -37,7 +40,9 @@
         <hr>
 
         <div class="card-body">
-       
+       @{
+           
+       }
             <div class="row">
                 <div class="col-lg-12">
                     <form id="sub-form" asp-controller="Auth" asp-action="VerifyUser" method="post" style="display:block;">

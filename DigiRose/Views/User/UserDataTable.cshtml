@@ -1,12 +1,42 @@
 ﻿@using DigiRose.CoreBussiness.StorageEntity.Users
 @using System.Security.Claims
+@using System.Web
 @model DigiRose.Models.Admin.PaginatedList<User>
 }
-
-<html>
+<html
+      lang="en"
+      class="light-style layout-menu-fixed"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="../assets/"
+      data-template="vertical-menu-template-free"
+      >
 <header>
+    <title>پنل مدیریت ادمین</title>
+    <link rel = "icon" href ="~/Images/SiteLogo/2.png" type = "image/x-icon">
     <link rel="stylesheet" href="~/css/ManagerialPannel.css"/>
     <link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet"
+        />
+    
+        <!-- Icons. Uncomment required icon fonts -->
+        <link rel="stylesheet" href="~/assets/vendor/fonts/boxicons.css" />
+    
+        <!-- Core CSS -->
+        <link
+          rel="stylesheet"
+          href="~/assets/vendor/css/core.css"
+          class="template-customizer-core-css"
+        />
+        <link
+          rel="stylesheet"
+          href="~/assets/vendor/css/theme-default.css"
+          class="template-customizer-theme-css"
+        />
 </header>
 @{
     Layout = "ManagerialPannel";
@@ -15,133 +45,212 @@
 <body>
 
 <div class="container-fluid">
-    <div class="row margin-top-50">
-        <div class="col-md-10 col-md offset-8 col-md-8 col-md offset-8 col-sm-8 col-sm offset-8 col-xl-offset-7 col-xl-9-offset-9 loginbox">
+  <div class="row margin-top-50">
+    <div class="col-md-10 col-md offset-8 col-md-8 col-md offset-8 col-sm-8 col-sm offset-8 col-xl-offset-7 col-xl-9-offset-9 loginbox">
+      
 
-<form asp-action="UserDataTable" asp-controller="User" method="get">
-    <div class="input-group mb-3 flex-md-row container-fluid" >
-        <button class="btn btn-primary" type="submit" style="border-radius: 30px" ><i class="fa fa-search" aria-hidden="true"></i></button>
-        <input type="text"  class="form-control" placeholder="جست و جوی کاربران ..." name="searchValue" style="border-radius: 30px;text-align: center">
-    </div>
-</form>
-<form  asp-action="UserDataTable" asp-controller="User" method="get">
-    <input type="text" name="sortOrder" list="params" style="border-radius: 30px" class="form-control-sm" />
-    <datalist id="params">
-        <option>Desc</option>
-        <option>Aesc</option>
-        <option>Date</option>
-    </datalist>
-    <button class="btn btn-primary" style="border-radius: 30px"  type="submit">مرتب سازی</button>
-</form>
+           <nav
+                  class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                  id="layout-navbar"
+                >
+             <div
+               class="navbar-nav-right d-flex align-items-center"
+               id="navbar-collapse"
+             >
+               <!-- Search -->
+               <form asp-action="UserDataTable" id="form" method="get" asp-controller="User">
+                 <div class="navbar-nav align-items-center">
+                   <div class="nav-item d-flex align-items-center">
+                     <a role="button" id="submit" ><i class="bx bx-search fs-4 lh-0"></i></a>
+                     <input
+                       style="text-align: center"
+                       type="text"
+                       class="form-control border-0 shadow-none"
+                       placeholder="جستجو کاربران..."
+                       name="searchvalue"
+                     />
+                   </div>
+                 </div>
+                 <script>
+                   document.getElementById("submit").addEventListener("click",function() {
+                      $("#form").submit();
+                   })
+                 </script>
+               </form>
+             </div>
 
 
 
-    <table class="table table-bordered table-hover  table-responsive-md table-light">
-        <thead>
-        <tr>
-            <th style="border-radius: 30px">شماره موبایل</th>
-            <th style="border-radius: 30px">وضعیت</th>
-            <th style="border-radius: 30px">نقش</th>
-            <th style="border-radius: 30px">اقدامات</th>
-        </tr>
-        </thead>
-        <tbody style="border-radius: 30px">
-        @{
-            foreach (var item in Model)
-            {
+
+             <form asp-action="UserDataTable" class="nav-item d-flex align-items-center" asp-controller="User" method="get">
+               <input type="text" value="Aesc" style="text-align: center;border-color: #0dcaf0" class="form-control form-select" name="sortOrder" list="params" />
+               <datalist id="params">
+                 <option value="Desc">نزولی</option>
+                 <option value="Aesc">صعودی</option>
+                 <option value="Date">تاریخ</option>
+               </datalist>
+               <button class="btn btn-primary" style="height:40px; width:70px;margin: 5px" type="submit">مرتب</button>
+             </form>
+  
+
+             
+             
+             
+             
+             
+             
+           </nav>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <!-- Content wrapper -->
+      <div class="content-wrapper">
+        <!-- Content -->
+      
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <!-- Layout Demo -->
+          <div class="col-12">
+            <div class="card overflow-hidden">
+                        
+              <table class="table table-striped">
+                <thead>
                 <tr>
-                    <td style="border-radius: 30px"><strong> <span class="bg bg-warning" style="border-radius: 30px">@item.Phonenumber</span></strong></td>
-                    @{
+                  <th scope="col" style="border-radius: 30px">شماره موبایل</th>
+                  <th scope="col" style="border-radius: 30px">وضعیت</th>
+                  <th scope="col" style="border-radius: 30px">نقش</th>
+                  <th scope="col" style="border-radius: 30px">اقدامات</th>
+                </tr>
+                </thead>
+                <tbody>
+                @{
+                  foreach (var item in Model)
+                  {
+                    <tr>
+                      <td style="border-radius: 30px"><strong> <span class="bg bg-warning" style="border-radius: 30px">@item.Phonenumber</span></strong></td>
+                      @{
                         if (item.UserStatus == UserStatus.None)
                         {
-                            <td style="border-radius: 30px"><span class="bg bg-secondary" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
-
+                          <td style="border-radius: 30px"><span class="bg bg-secondary" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
+      
                         }
                         else if (item.UserStatus == UserStatus.Active)
                         {
-                            <td style="border-radius: 30px"><span class="bg bg-success" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
+                          <td style="border-radius: 30px"><span class="bg bg-success" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
                         }
                         else
                         {
-                            <td style="border-radius: 30px"><span class="bg bg-danger" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
+                          <td style="border-radius: 30px"><span class="bg bg-danger" style="border-radius: 30px">@DigiRose.Models.Admin.UserStatus.GetUserStatus(item.UserStatus)</span></td>
                         }
-                    }
-                    <td style="border-radius: 30px"> <span class="bg bg-warning" style="border-radius: 30px">@DigiRose.Models.Admin.UserRole.GetUserRoleName(item.RoleId)</span></td>
-
-                    <td style="border-radius: 30px">
+                      }
+                      <td style="border-radius: 30px"> <span class="bg bg-warning" style="border-radius: 30px">@DigiRose.Models.Admin.UserRole.GetUserRoleName(item.RoleId)</span></td>
+      
+                      <td style="border-radius: 30px">
                         @{
-                            if (item.UserStatus == UserStatus.Active)
-                            {
-                                <a asp-controller="User" asp-action="DeactivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
-                  
-
-                            }
-                            else if (item.UserStatus == UserStatus.Inactive)
-                            {
-                                <a id="active" asp-controller="User" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
-                                
-                            }
-                            else
-                            {
-                                <a  asp-controller="User" asp-action="DeactivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
-                                <a asp-controller="User" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
-                                
-                            }
+                          if (item.UserStatus == UserStatus.Active)
+                          {
+                            <a asp-controller="User" asp-action="DeactivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
+      
+      
+                          }
+                          else if (item.UserStatus == UserStatus.Inactive)
+                          {
+                            <a id="active" asp-controller="User" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
+      
+                          }
+                          else
+                          {
+                            <a asp-controller="User" asp-action="DeactivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-danger" style="border-radius: 30px"><i class="fa fa-times" aria-hidden="true"></i></button></a>
+                            <a asp-controller="User" asp-action="ActivateUser" asp-route-Id="@(item.Id)"><button class="btn btn-success" style="border-radius: 30px"><i class="fa fa-check-square" aria-hidden="true"></i></button></a>
+      
+                          }
                         }
                         <a asp-controller="User" asp-action="EditUserPhone" asp-route-Id="@(item.Id)"><button class="btn btn-info" style="border-radius: 30px"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
-                    </td>
-
-                </tr>
-            }
-        }
-        </tbody>
-    </table>
-
-
-
-@{
-    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-}
-
-
-
-
-<a asp-action="UserDataTable" asp-controller="User"
-   
-   asp-route-pageNumber="@(Model.PageIndex + 1)"
-   
-   class="btn btn-primary @nextDisabled">
-    <i class="fa fa-share" aria-hidden="true"></i>
-</a>
-
-
-<a asp-action="UserDataTable" asp-controller="User"
-  
-   asp-route-pageNumber="@(Model.PageIndex - 1)"
-   
-   class="btn btn-primary @prevDisabled">
- <i class="fa fa-reply" aria-hidden="true"></i>
-</a>
+                      </td>
+      
+                    </tr>
+                  }
+                }
+                          
+                </tbody>
+              </table>
+              
+              @{
+                var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+              }
 
 
 
 
+              <a asp-action="UserDataTable" asp-controller="User"
 
+                 asp-route-pageNumber="@(Model.PageIndex + 1)"
 
-
+                 class="btn btn-primary @nextDisabled">
+                <i class="fa fa-share" aria-hidden="true"></i>
+              </a>
+              <a asp-action="UserDataTable" asp-controller="User"
+                 asp-route-pageNumber="@(Model.PageIndex - 1)"
+                 class="btn btn-primary @prevDisabled">
+                <i class="fa fa-reply" aria-hidden="true"></i>
+              </a>
+              
+              
+            </div>
+          </div>
+          <!--/ Layout Demo -->
         </div>
+        <!-- / Content -->
+      
+        <div class="content-backdrop fade"></div>
+      </div>
+      
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
+  </div>
+  
 </div>
-
-
-
-
-
-
-
-
-
 
 
 

@@ -43,4 +43,55 @@
       <Folder Include="wwwroot\Images\SiteLogo" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\avatars\1.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\avatars\5.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\avatars\6.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\avatars\7.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\backgrounds\18.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\1.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\11.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\12.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\13.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\17.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\18.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\19.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\2.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\20.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\3.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\4.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\5.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\elements\7.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\favicon\favicon.ico" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\asana.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\behance.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\dribbble.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\facebook.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\github.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\google.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\instagram.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\mailchimp.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\slack.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\brands\twitter.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\unicons\cc-primary.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\unicons\cc-success.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\unicons\cc-warning.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\unicons\chart-success.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\unicons\chart.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\unicons\paypal.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\unicons\wallet-info.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\unicons\wallet.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\illustrations\girl-doing-yoga-light.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\illustrations\man-with-laptop-light.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\illustrations\page-misc-error-light.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\layouts\layout-container-light.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\layouts\layout-fluid-light.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\layouts\layout-without-menu-light.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\img\layouts\layout-without-navbar-light.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\vendor\js\bootstrap.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\vendor\js\helpers.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\vendor\js\menu.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\css\demo.css" />
+    </ItemGroup>
+
 </Project>
